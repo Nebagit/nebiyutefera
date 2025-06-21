@@ -27,7 +27,7 @@ const About = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
-          About Me
+          From the Whole Me: A Quick Peek
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
       </div>
@@ -84,7 +84,7 @@ const About = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-gradient-to-r from-blue-500/20 to-purple-600/20 backdrop-blur-lg rounded-xl p-6 border border-white/10">
-              <h4 className="text-3xl font-bold text-white mb-2">1+</h4>
+              <h4 className="text-3xl font-bold text-white mb-2">2+</h4>
               <p className="text-gray-300">Years Experience</p>
             </div>
             <div className="bg-gradient-to-r from-purple-500/20 to-pink-600/20 backdrop-blur-lg rounded-xl p-6 border border-white/10">

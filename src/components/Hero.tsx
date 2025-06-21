@@ -18,15 +18,15 @@ const Hero = () => {
     },
     {
       image: Nebiyu2,
-      title: "AI Research Enthusiast",
-      subtitle: "Exploring Artificial Intelligence",
-      description: "Dedicated to advancing AI research and pursuing graduate studies in Computer Science"
+      title: "AI and ML Oriented",
+      subtitle: "Exploring Artificial Intelligence and ML",
+      description: "Dedicated to advancing AI research and searching graduate studies in Computer Science"
     },
     {
       image: Nebiyu10,
-      title: "Innovation Leader",
-      subtitle: "Transforming Ideas into Reality",
-      description: "Committed to excellence in software development and cutting-edge research"
+      title: "Telocratic Leadership Inclined",
+      subtitle: "Leadership driven by long-term Purpose and Vision.",
+      description: "Guided by purpose, governed by vision; where leadership begins with meaning and ends in impact."
     }
   ];
 

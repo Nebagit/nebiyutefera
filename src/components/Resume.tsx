@@ -70,6 +70,25 @@ const Resume = () => {
     }
   ];
 
+  const extracurriculars = [
+    {
+      activity: "Student Representative for Computer Science Department",
+      institution: "Addis Ababa University",
+      companyUrl: "https://www.aau.edu.et/",
+      period: "2022 - 2024",
+      description: "As a Student Representative of the Computer Science department, I've perfected the art of communication with esteemed instructors, from Drs. to Professors and also all students, navigating the academic landscape with finesse and charm. 🎓💬",
+      focus: "Amazingly 😁, I've also mastered the intricate dance of phone rings, messages, meetings, and all the jazz – a marathon of responsibilities, laughter, and the occasional dash across the library to silence a ringing phone (sorry, librarians!)."
+    },
+    {
+      activity: "President of Volunteers Club",
+      institution: "Addis Ababa University",
+      companyUrl: "https://www.aau.edu.et/",
+      period: "Feb 2023 - Jul 2024",
+      description: "Awarded Effective Leadership of the Year for impactful student-led initiatives and community-centered coordination.",
+      focus: "During my time at Addis Ababa University, I served as a resident leader of the Volunteers and Development Club, where I led numerous initiatives aimed at empowering students and enhancing campus life. My leadership was recognized with a Certificate of Effective Leadership of the Year, awarded for organizing impactful programs including bi-weekly campus-wide clean-up campaigns, student-led service rotations to provide campus workers with scheduled rest periods, and collaborative events with alumni through a dedicated communication panel. I also coordinated academic and social development activities that enabled students to actively contribute to their university environment and grow through shared community engagement."
+    }
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
@@ -142,6 +161,35 @@ const Resume = () => {
             ))}
           </div>
 
+
+          {/* Extracurricular Section */}
+          <div className="mt-16">
+            <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
+              <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-3"></span>
+              Extra Curricular Activities
+            </h3>
+
+            <div className="space-y-8">
+              {extracurriculars.map((extra, index) => (
+                <div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                    <h4 className="text-xl font-bold text-white">{extra.activity}</h4>
+                    <span className="text-purple-400 font-semibold">{extra.period}</span>
+                  </div>
+                  <h5 className="text-lg text-blue-400 mb-3">{extra.institution}</h5>
+                  <a href={extra.companyUrl} className="text-green-300 mb-4" target="_blank" rel="noopener noreferrer">
+                    Link
+                  </a>
+                  <p className="text-gray-300 mb-3">{extra.description}</p>
+                  <p className="text-gray-400 italic">{extra.focus}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* View On LinkedIn Button */}
           <div className="mt-8">
             <a
@@ -154,6 +202,7 @@ const Resume = () => {
               </button>
             </a>
           </div>
+
         </div>
       </div>
     </div>

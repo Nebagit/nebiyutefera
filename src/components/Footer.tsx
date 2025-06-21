@@ -8,19 +8,19 @@ const Footer = () => {
 
 
     const quickLinks = [
+        { label: "Home", href: "#home" },
         { label: "About", href: "#about" },
-        { label: "Projects", href: "#projects" },
+        { label: "Projects", href: "#portfolio" },
         { label: "Skills", href: "#skills" },
-        { label: "Experience", href: "#experience" },
         { label: "Contact", href: "#contact" }
     ];
 
     const services = [
-        { label: "Web Development", href: "#" },
-        { label: "Mobile Apps", href: "#" },
-        { label: "UI/UX Design", href: "#" },
-        { label: "Consulting", href: "#" },
-        { label: "Code Review", href: "#" }
+        { label: "Web Development", href: "#services" },
+        { label: "Mobile Apps", href: "#services" },
+        { label: "UI/UX Design", href: "#services" },
+        { label: "Consulting", href: "#services" },
+        { label: "Code Review", href: "#services" }
     ];
 
     return (
@@ -39,24 +39,24 @@ const Footer = () => {
                         {/* Brand Section */}
                         <div className="lg:col-span-2">
                             <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center">
+                                <div className="w-16 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center">
                                     <Code className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-bold">Alex Chen</h3>
-                                    <p className="text-blue-300">Creative Developer</p>
+                                    <h3 className="text-2xl font-bold">Nebiyu </h3>
+                                    <p className="text-blue-300">Software Developer | AI Engineer | ML and LLM | Pyscho-Theo-Sophy reader as a brain snacks</p>
                                 </div>
                             </div>
 
                             <p className="text-slate-300 mb-6 max-w-md leading-relaxed">
-                                Crafting digital experiences that inspire and engage. Every line of code tells a story,
-                                and every project is an opportunity to make the web a more beautiful place.
+                                I develop software solutions with a focus on AI, Machine Learning, and LLMs.
+                                On the side, I dive into psychology, theology, and philosophy; my lifelong curiosities and favorite brain snacks
                             </p>
 
                             <div className="flex items-center space-x-4">
                                 <div className="flex items-center space-x-2 text-blue-300">
                                     <Coffee className="w-4 h-4" />
-                                    <span className="text-sm">Fueled by coffee</span>
+                                    <span className="text-sm">Fueled by Commitment and Dedication</span>
                                 </div>
                                 <div className="flex items-center space-x-2 text-green-300">
                                     <Zap className="w-4 h-4" />

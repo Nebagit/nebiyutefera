@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Services = () => {
   const services = [
@@ -84,7 +83,7 @@ const Services = () => {
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-8"></div>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          Comprehensive technology solutions tailored to meet your business needs and drive innovation forward.
+          I am Leading expert-driven teams to deliver comprehensive software and tech solutions; turning your ideas and projects into powerful and tailored innovations.
         </p>
       </div>
 

@@ -145,7 +145,7 @@ const BlogFeed = ({
         </div>
         <h1 className="text-4xl font-bold text-gray-100 mb-4">Latest Blog Posts</h1>
         <p className="text-xl text-gray-100 max-w-2xl mx-auto">
-          Discover the newest insights and stories from our featured Substack publication
+          Discover the newest insights and stories from my featured Substack publications
         </p>
       </div>
 

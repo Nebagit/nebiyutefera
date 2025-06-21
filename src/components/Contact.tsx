@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PopupCard from '../assets/ui/PopupMessage';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -10,6 +11,9 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [popup, setPopup] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -23,27 +27,34 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        'service_52j8stm', // Replace with your EmailJS service ID
-        'template_48c9mbf', // Replace with your EmailJS template ID
+      await emailjs.send(
+        'service_52j8stm',
+        'template_48c9mbf',
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_name: 'Nebiyu', // You can customize this
+          to_name: 'Nebiyu',
         },
-        '1iTcEddhziGdw4KNs' // Replace with your EmailJS public key
+        '1iTcEddhziGdw4KNs'
       );
 
-      console.log('Email sent successfully:', result.text);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Thank you for your message! I will get back to you soon.');
+
+      setPopup({
+        type: 'success',
+        message: 'Thank you for your message! I will get back to you soon.'
+      });
+
     } catch (error) {
-      console.error('Failed to send email:', error);
-      alert('Sorry, there was an error sending your message. Please try again.');
-    } finally {
+      console.error(error);
+      setPopup({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again.'
+      });
+    }
+    finally {
       setIsSubmitting(false);
     }
   };
@@ -242,6 +253,15 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {popup && (
+        <PopupCard
+          type={popup.type}
+          message={popup.message}
+          onClose={() => setPopup(null)}
+        />
+      )}
+
     </div>
   );
 };
