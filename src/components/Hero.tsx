@@ -25,8 +25,8 @@ const Hero = () => {
     {
       image: Nebiyu10,
       title: "Telocratic Leadership Inclined",
-      subtitle: "Leadership driven by long-term Purpose and Vision.",
-      description: "Guided by purpose, governed by vision; where leadership begins with meaning and ends in impact."
+      subtitle: "Leadership driven by long-term Purpose and Vision + Legacy.",
+      description: "Guided by purpose, governed by vision; where leadership begins with meaning and ends in Impact with Legacy."
     }
   ];
 
@@ -109,13 +109,13 @@ const Hero = () => {
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={18} />
       </button>
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={18} />
       </button>
 
       {/* Slide Indicators */}

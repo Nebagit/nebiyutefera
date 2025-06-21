@@ -18,7 +18,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'resume', 'skills', 'services', 'portfolio', 'recommendations', 'contact'];
+      const sections = ['home', 'about', 'resume', 'skills', 'services', 'portfolio', 'blogs', 'recommendations', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -66,7 +66,7 @@ const Index = () => {
           <Portfolio />
         </section>
 
-        <section id="#" className="min-h-screen py-20">
+        <section id="blogs" className="min-h-screen py-20">
           <BlogFeed
             substackUrl="https://nebiyutefera.substack.com/feed"
             maxPosts={8}
