@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,48 +21,64 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_52j8stm', // Replace with your EmailJS service ID
+        'template_48c9mbf', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Nebiyu', // You can customize this
+        },
+        '1iTcEddhziGdw4KNs' // Replace with your EmailJS public key
+      );
+
+      console.log('Email sent successfully:', result.text);
       setFormData({ name: '', email: '', subject: '', message: '' });
       alert('Thank you for your message! I will get back to you soon.');
-    }, 2000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       title: "Email",
-      value: "your.email@example.com",
+      value: "neba.t.git@gmail.com",
       icon: "📧",
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+251923536007",
       icon: "📱",
       gradient: "from-green-500 to-teal-600"
     },
     {
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Addis Ababa, 4Kilo, Ethiopia",
       icon: "📍",
       gradient: "from-purple-500 to-pink-600"
     },
     {
       title: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
+      value: "https://www.linkedin.com/in/nebiyu-tefera-aau/",
       icon: "💼",
       gradient: "from-blue-600 to-indigo-600"
     }
   ];
 
   const socialLinks = [
-    { name: "GitHub", url: "https://github.com", icon: "💻" },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: "💼" },
-    { name: "Twitter", url: "https://twitter.com", icon: "🐦" },
-    { name: "Medium", url: "https://medium.com", icon: "📝" }
+    { name: "GitHub", url: "https://github.com/Nebagit", icon: "💻" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/nebiyu-tefera-aau/", icon: "💼" },
+    { name: "Substack", url: "https://nebiyutefera.substack.com", icon: "📝" }
   ];
 
   return (
@@ -80,7 +97,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
           <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -98,7 +115,7 @@ const Contact = () => {
                   placeholder="Your Name"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
                   Email Address
@@ -126,7 +143,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-green focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
               >
                 <option value="">Select a subject</option>
                 <option value="collaboration">Project Collaboration</option>
@@ -156,11 +173,10 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isSubmitting
-                  ? 'bg-gray-600 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg'
-              } text-white`}
+              className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${isSubmitting
+                ? 'bg-gray-600 cursor-not-allowed'
+                : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg'
+                } text-white`}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
@@ -173,7 +189,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="grid gap-4">
               {contactInfo.map((info, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                 >

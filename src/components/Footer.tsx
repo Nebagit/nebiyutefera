@@ -1,53 +1,10 @@
-import { useEffect } from 'react';
-
 import { Heart, ArrowUp, Code, Coffee, Zap } from 'lucide-react';
-
-declare global {
-    interface Window {
-        CustomSubstackWidget?: {
-            substackUrl: string;
-            placeholder: string;
-            buttonText: string;
-            theme: string;
-            colors: {
-                primary: string;
-                input: string;
-                email: string;
-                text: string;
-            };
-        };
-    }
-}
+import Newsletter from '../assets/ui/Newsletter';
 
 const Footer = () => {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://substackapi.com/widget.js';
-        script.async = true;
-        document.body.appendChild(script);
-
-        window.CustomSubstackWidget = {
-            substackUrl: 'nebiyutefera.substack.com',
-            placeholder: 'Enter your email',
-            buttonText: 'Subscribe',
-            theme: 'custom',
-            colors: {
-                primary: '#3b82f6', // Tailwind blue-500
-                input: 'rgba(255,255,255,0.1)',
-                email: '#ffffff',
-                text: '#ffffff',
-            },
-        };
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
 
 
     const quickLinks = [
@@ -146,19 +103,7 @@ const Footer = () => {
                     </div>
 
                     {/* Newsletter Section */}
-                    <div className="border-t border-slate-1000 pt-12 mb-12">
-                        <div className="max-w-2xl mx-auto text-center">
-                            <h4 className="text-2xl font-bold mb-4">Stay in the Loop</h4>
-                            <p className="text-slate-300 mb-6">
-                                Get the latest updates on new projects, tech insights, and creative inspiration.
-                            </p>
-                            <div
-                                id="custom-substack-embed"
-                                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                            />
-                        </div>
-                    </div>
-
+                    <Newsletter />
 
                     {/* Bottom Section */}
                     <div className="border-t border-slate-900 pt-8">
@@ -166,9 +111,9 @@ const Footer = () => {
                             <div className="flex items-center space-x-2 text-slate-400 mb-4 md:mb-0">
                                 <span>Made with</span>
                                 <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-                                <span>and lots of</span>
-                                <Coffee className="w-4 h-4 text-amber-400" />
-                                <span>© 2024 Alex Chen. All rights reserved.</span>
+                                <span>and a deep</span>
+                                <Zap className="w-4 h-4 text-amber-400" />
+                                <span>© 2025 Nebiyu Tefera. All rights reserved.</span>
                             </div>
 
                             <button
