@@ -253,16 +253,14 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        {popup && (
+          <PopupCard
+            type={popup.type}
+            message={popup.message}
+            onClose={() => setPopup(null)}
+          />
+        )}
       </div>
-
-      {popup && (
-        <PopupCard
-          type={popup.type}
-          message={popup.message}
-          onClose={() => setPopup(null)}
-        />
-      )}
-
     </div>
   );
 };
