@@ -103,18 +103,20 @@ const Footer = () => {
                     </div>
 
                     {/* Newsletter Section */}
-                    <Newsletter />
+                    <div className='border-t border-slate-500'><Newsletter /></div>
+
 
                     {/* Bottom Section */}
                     <div className="border-t border-slate-900 pt-8">
                         <div className="flex flex-col md:flex-row justify-between items-center">
                             <div className="flex items-center space-x-2 text-slate-400 mb-4 md:mb-0">
-                                <span>Made with</span>
+                                <span>Made</span>
                                 <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-                                <span>and a deep</span>
+                                <span>deep</span>
                                 <Zap className="w-4 h-4 text-amber-400" />
-                                <span>© 2025 Nebiyu Tefera. All rights reserved.</span>
+                                <span>© 2025 Nebiyu Tefera.</span>
                             </div>
+                            <span className='flex items-center space-x-2 text-slate-400 mb-4 md:mb-0'>All rights reserved.</span>
 
                             <button
                                 onClick={scrollToTop}

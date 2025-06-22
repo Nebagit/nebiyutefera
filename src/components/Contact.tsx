@@ -89,7 +89,8 @@ const Contact = () => {
   const socialLinks = [
     { name: "GitHub", url: "https://github.com/Nebagit", icon: "💻" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/nebiyu-tefera-aau/", icon: "💼" },
-    { name: "Substack", url: "https://nebiyutefera.substack.com", icon: "📝" }
+    { name: "Substack", url: "https://nebiyutefera.substack.com", icon: "📝" },
+    { name: "LeetCode", url: "https://leetcode.com/u/Nebiyu-T/", icon: "💻" }
   ];
 
   return (
