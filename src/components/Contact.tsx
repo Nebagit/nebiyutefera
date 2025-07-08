@@ -96,22 +96,22 @@ const Contact = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
           Contact Me
         </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mb-8"></div>
-        <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <p className="text-base sm:text-xl text-gray-300 max-w-full sm:max-w-3xl mx-auto">
           Ready to collaborate on your next project or discuss AI research opportunities? Let's connect!
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-12">
+      <div className="grid lg:grid-cols-2 gap-12 min-w-0">
         {/* Contact Form */}
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-          <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
+        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/10">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Send Message</h3>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 min-w-0">
               <div>
                 <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
                   Full Name
@@ -185,9 +185,9 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${isSubmitting
-                ? 'bg-gray-600 cursor-not-allowed'
-                : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg'
+              className={`w-full py-3 px-4 sm:px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${isSubmitting
+                  ? 'bg-gray-600 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg'
                 } text-white`}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -198,20 +198,22 @@ const Contact = () => {
         {/* Contact Information */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="grid gap-4">
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
                   className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
                 >
-                  <div className="flex items-center">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${info.gradient} rounded-lg flex items-center justify-center text-xl mr-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex items-center min-w-0">
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-r ${info.gradient} rounded-lg flex items-center justify-center text-xl mr-4 group-hover:scale-110 transition-transform duration-300`}
+                    >
                       {info.icon}
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h4 className="text-white font-semibold">{info.title}</h4>
-                      <p className="text-gray-300">{info.value}</p>
+                      <p className="text-gray-300 break-all">{info.value}</p>
                     </div>
                   </div>
                 </div>
@@ -221,8 +223,8 @@ const Contact = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Follow Me</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Follow Me</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -253,15 +255,14 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+        {/* Popup */}
         {popup && (
-          <PopupCard
-            type={popup.type}
-            message={popup.message}
-            onClose={() => setPopup(null)}
-          />
+          <PopupCard type={popup.type} message={popup.message} onClose={() => setPopup(null)} />
         )}
       </div>
     </div>
+
   );
 };
 
