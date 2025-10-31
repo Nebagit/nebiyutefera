@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import Tilye from '../assets/images/ProfTileye4.jpg';
 import Ashenafi from '../assets/images/MrAshenafi1.jpg';
 import Beimnet from '../assets/images/MrsBeimnet.jpeg';
 import Adugna from '../assets/images/Adugna.png';
 import Hermela from '../assets/images/Hermella.jpg';
 
-
-
-
 const Recommendations = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); // ✅ Added pause state
 
   const recommendations = [
     {
@@ -58,16 +56,17 @@ const Recommendations = () => {
       email: "fikre.eleni@gmail.com",
       phone: "+251922383939"
     },
-
   ];
 
   useEffect(() => {
+    if (isPaused) return; // ✅ Stop auto-slide when paused
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % recommendations.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [recommendations.length]);
+  }, [recommendations.length, isPaused]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % recommendations.length);
@@ -80,6 +79,8 @@ const Recommendations = () => {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
+
+  const togglePause = () => setIsPaused((prev) => !prev); // ✅ Toggle play/pause
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,10 +102,7 @@ const Recommendations = () => {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {recommendations.map((rec, index) => (
-              <div
-                key={index}
-                className="w-full flex-shrink-0"
-              >
+              <div key={index} className="w-full flex-shrink-0">
                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-white/10 mx-4">
                   <div className="grid md:grid-cols-3 gap-8 items-center">
                     {/* Recommender Info */}
@@ -164,16 +162,25 @@ const Recommendations = () => {
           <ChevronRight size={24} />
         </button>
 
+        {/* ✅ Pause/Play Button */}
+        <button
+          onClick={togglePause}
+          className="absolute right-1/2 bottom-[-3rem] transform translate-x-1/2 z-10 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
+        >
+          {isPaused ? <Play size={20} /> : <Pause size={20} />}
+        </button>
+
         {/* Slide Indicators */}
         <div className="flex justify-center mt-8 space-x-2">
           {recommendations.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                ? 'bg-gradient-to-r from-blue-500 to-purple-600 scale-125'
-                : 'bg-white/30 hover:bg-white/50'
-                }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 scale-125'
+                  : 'bg-white/30 hover:bg-white/50'
+              }`}
             />
           ))}
         </div>

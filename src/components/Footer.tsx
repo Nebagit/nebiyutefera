@@ -114,9 +114,9 @@ const Footer = () => {
                                 <Heart className="w-4 h-4 text-red-400 animate-pulse" />
                                 <span>deep</span>
                                 <Zap className="w-4 h-4 text-amber-400" />
-                                <span>© 2025 Nebiyu Tefera.</span>
+                                <span></span>
                             </div>
-                            <span className='flex items-center space-x-2 text-slate-400 mb-4 md:mb-0'>All rights reserved.</span>
+                            <span className='flex items-center space-x-2 text-slate-400 mb-4 md:mb-0'>© 2025 Nebiyu Tefera. All rights reserved.</span>
 
                             <button
                                 onClick={scrollToTop}
