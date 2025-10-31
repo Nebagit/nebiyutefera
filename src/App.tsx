@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import BlogFeed from "./components/BlogFeed";
+import Gallery  from "./components/Gallery";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -76,6 +77,9 @@ const Index = () => {
           <Recommendations />
         </section>
 
+        <section id="gallery" className="min-h-screen py-20">
+          <Gallery />
+        </section>
         <section id="contact" className="min-h-screen py-20">
           <Contact />
         </section>
