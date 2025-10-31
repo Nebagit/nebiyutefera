@@ -23,27 +23,28 @@ import gallery19 from "../assets/images/gallery-19.jpeg";
 import gallery20 from "../assets/images/gallery-20.jpeg";
 
 const images = [
-  { id: 1, src: gallery1, alt: "A memory with my department head dean Mr. Ashenafi at my 4th year" },
-  { id: 2, src: gallery2, alt: "An unforgattable memory with the Dean of CNCS Addis Ababa University Professor. Tilye Feyissa" },
-  { id: 3, src: gallery3, alt: "The photo of the final year project defense with my examiner and also lecturer Dr. Mekonnen" },
-  { id: 4, src: gallery4, alt: "I was entertaining the 80+ cultures of Ethiopia during cultural event at the university" },
-  { id: 5, src: gallery5, alt: "The final year project defense presentation memory with my teams and the examiner Dr. Mekonnen" },
-  { id: 6, src: gallery6, alt: "The Graduation ceremony with my friends at Addis Ababa University" },
-  { id: 7, src: gallery7, alt: "The graduation ceremony with my Computer Science department 2024 batch at Addis Ababa University" },
-  { id: 8, src: gallery8, alt: "A memory with folks at the graduation ceremony" },
-  { id: 9, src: gallery9, alt: "Presenting the final year project defense" },
-  { id: 10, src: gallery10, alt: "Culture day celebration" },
-  { id: 11, src: gallery11, alt: "Culture day celebration in which I was leading the event" },
-  { id: 12, src: gallery12, alt: "Ethiopianism showcasing traditional attire" },
-  { id: 13, src: gallery13, alt: "A moment of joy and celebration" },
-  { id: 14, src: gallery14, alt: "The final day of ERP training at the lovely place--Addis Software/Swenetix" },
-  { id: 15, src: gallery15, alt: "A panel discussion on software development" },
-  { id: 16, src: gallery16, alt: "A memory of my days at Guba Technology as a full stack developer" },
-  { id: 17, src: gallery17, alt: "Unforgettable moments with folks" },
-  { id: 18, src: gallery18, alt: "A memory of ERP training sessions at Addis Software/Swenetix--one of the lovliest place in my time" },
-  { id: 19, src: gallery19, alt: "A memory of joy and celebration for the implmentation of ERP project at Addis Software/Swenetix" },
-  { id: 20, src: gallery20, alt: "A memory of collaboration and teamwork during the ERP project" },
+  { id: 1, src: gallery1, alt: "Striking a legendary pose with my department head, Dean Mr. Ashenafi — 4th year vibes!" },
+  { id: 2, src: gallery2, alt: "Unforgettable laughter and wisdom with CNCS Dean, Professor Tilye Feyissa — moments to treasure!" },
+  { id: 3, src: gallery3, alt: "Final year project defense: me, my examiner Dr. Mekonnen, and a hint of nervous excitement!" },
+  { id: 4, src: gallery4, alt: "Entertaining 80+ cultures of Ethiopia — I might have stolen the show a little " },
+  { id: 5, src: gallery5, alt: "Teamwork, nerves, and triumph — final year project defense memories with Dr. Mekonnen" },
+  { id: 6, src: gallery6, alt: "Graduation day smiles and epic memories with friends at Addis Ababa University 🎓" },
+  { id: 7, src: gallery7, alt: "CS Department 2024 batch squad goals — graduation mode activated!" },
+  { id: 8, src: gallery8, alt: "Candid laughter with amazing folks at graduation — priceless!" },
+  { id: 9, src: gallery9, alt: "Channeling my inner scholar: presenting the final year project like a pro " },
+  { id: 10, src: gallery10, alt: "Culture day vibes — celebrating colors, traditions, and tiny dance moves" },
+  { id: 11, src: gallery11, alt: "Leading the epic Culture Day extravaganza — call me the master of ceremonies!" },
+  { id: 12, src: gallery12, alt: "Proudly showcasing Ethiopian traditional attire — fashion meets heritage 🇪🇹" },
+  { id: 13, src: gallery13, alt: "Pure joy and celebration captured in one unforgettable snapshot " },
+  { id: 14, src: gallery14, alt: "The grand finale of ERP training at Addis Software/Swenetix — learning, laughs, and memories!" },
+  { id: 15, src: gallery15, alt: "Panel discussion on software development — opinions flying, coffee flowing " },
+  { id: 16, src: gallery16, alt: "Throwback to full stack developer life at Guba Technology — code, coffee, repeat " },
+  { id: 17, src: gallery17, alt: "Epic moments with colleagues — laughter, teamwork, and memories to last forever!" },
+  { id: 18, src: gallery18, alt: "ERP training sessions at Addis Software/Swenetix — learning with a sprinkle of fun " },
+  { id: 19, src: gallery19, alt: "Celebrating the successful ERP project implementation — high fives all around " },
+  { id: 20, src: gallery20, alt: "Collaboration at its finest — teamwork, strategy, and unforgettable memories!" },
 ];
+
 
 export const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
