@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Resume from './components/Resume';
-import Skills from './components/Skills';
+import Research from './components/Research';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Recommendations from './components/Recommendations';
@@ -53,8 +53,8 @@ const Index = () => {
           <Resume />
         </section>
 
-        <section id="skills" className="min-h-screen py-20">
-          <Skills />
+        <section id="research" className="min-h-screen py-20">
+          <Research />
         </section>
 
         <section id="services" className="min-h-screen py-20">

@@ -6,11 +6,23 @@ const Resume = () => {
       company: "Addis Software",
       companyUrl: "https://addissoftware.com/",
       period: "Mar, 2025, - Present",
-      description: "Develope and customize ERP solutions for various industries.",
+      description: "Develop and customize ERP solutions for various industries.",
       achievements: [
         "Develop and support ERP modules to improve business operations, focusing on finance, HR, procurement, and CRM.",
         "Optimize system functionality and troubleshoot technical issues to ensure smooth performance.",
         "Ensure seamless integration across modules and deliver efficient, scalable ERP solutions."
+      ]
+    },
+    {
+      title: "Project Manager and Translator",
+      company: "Gemstone App",
+      companyUrl: "https://gemstonesapp.com/",
+      period: "Mar, 2025, - Present",
+      description: "Managing and overseeing the development of an African languages learning application.",
+      achievements: [
+        " Translated and proofread the Amharic language content during the application development.",
+        " Contributed to the successful implementation of the project, which was recognized among the top 3 winning projects in a U.S. competition",
+        " Led a team of 13 members from Europe and Africa who worked as translators and proofreaders for the development of an African languages learning app."
       ]
     },
     {
@@ -56,9 +68,17 @@ const Resume = () => {
       degree: "Bachelor of Science in Computer Science",
       institution: "Addis Ababa University",
       companyUrl: "https://www.aau.edu.et/",
-      period: "2021 - 2024",
+      period: "2020 - 2024",
       description: "Pursuing a Bachelor of Science in Computer Science at Addis Ababa University, gaining a strong foundation in software development, algorithms, and systems design.",
       focus: "Studying core computer science subjects—including data structures, databases, operating systems, and web development—while applying knowledge through hands-on projects and research."
+    },
+    {
+      degree: "ERP Specialist Training and Project Management",
+      institution: "HansaWorld University",
+      companyUrl: "https://www.hansaworld.com/en/university",
+      period: "Mar 2025- Oct 2025",
+      description: "ERP Specialist Training and Project Management",
+      focus: "Completed an intensive, project-based bootcamp covering ERP systems, project management methodologies, and business process optimization."
     },
     {
       degree: "Full Stack Web Development",
@@ -78,6 +98,14 @@ const Resume = () => {
       period: "2022 - 2024",
       description: "As a Student Representative of the Computer Science department, I've perfected the art of communication with esteemed instructors, from Drs. to Professors and also all students, navigating the academic landscape with finesse and charm. 🎓💬",
       focus: "Amazingly 😁, I've also mastered the intricate dance of phone rings, messages, meetings, and all the jazz – a marathon of responsibilities, laughter, and the occasional dash across the library to silence a ringing phone (sorry, librarians!)."
+    },
+     {
+      activity: "Huawei ICT Academy Ambassador at AAU",
+      institution: "Huawei ICT Academy and Addis Ababa University",
+      companyUrl: "https://e.huawei.com/en/talent/ict-academy/#/home",
+      period: "Apr 2023 - Jul 2024",
+      description: "As an Ambassador of the Huawei ICT Academy at AAU CNCS in the Science Campus, I represent the academy within the campus community. The Huawei ICT Academy has a contract with Addis Ababa University to support students in the digital world.",
+      focus: " It offers short courses with certificates for both paid and free scholarship opportunities, aimed at developing technological skills among AAU students. Our role as ambassadors is to facilitate the academy's presence and promote its initiatives within our respective campuses."
     },
     {
       activity: "President of Volunteers Club",

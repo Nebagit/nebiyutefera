@@ -13,7 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'resume', label: 'Resume' },
-    { id: 'skills', label: 'Skills' },
+    { id: 'research', label: 'Research' },
     { id: 'services', label: 'Services' },
     { id: 'portfolio', label: 'Portfolio' },
     { id: 'blogs', label: 'Blogs' },
@@ -57,8 +57,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${activeSection === item.id
-                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    ? ' text-yellow-600 shadow-lg'
+                    : 'text-gray-300 hover:text-blue-700'
                     }`}
                 >
                   {item.label}
@@ -88,8 +88,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${activeSection === item.id
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                  ? ' text-yellow-600 shadow-lg'
+                  : 'text-gray-300 hover:text-blue-700'
                   }`}
               >
                 {item.label}
