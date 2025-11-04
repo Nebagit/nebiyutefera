@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PopupCard from '../assets/ui/PopupMessage';
 import emailjs from '@emailjs/browser';
+import { Mail, Phone, MapPin, Linkedin, Github, Notebook, Laptop } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +12,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [popup, setPopup] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -41,20 +40,14 @@ const Contact = () => {
       );
 
       setFormData({ name: '', email: '', subject: '', message: '' });
-
-      setPopup({
-        type: 'success',
-        message: 'Thank you for your message! I will get back to you soon.'
-      });
-
+      setPopup({ type: 'success', message: 'Thank you for your message! I will get back to you soon.' });
     } catch (error) {
       console.error(error);
       setPopup({
         type: 'error',
         message: 'Sorry, there was an error sending your message. Please try again.'
       });
-    }
-    finally {
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -63,38 +56,35 @@ const Contact = () => {
     {
       title: "Email",
       value: "neba.t.git@gmail.com",
-      icon: "📧",
-      gradient: "from-blue-500 to-cyan-600"
+      icon: <Mail className="w-6 h-6 text-blue-500" />,
     },
     {
       title: "Phone",
       value: "+251923536007",
-      icon: "📱",
-      gradient: "from-green-500 to-teal-600"
+      icon: <Phone className="w-6 h-6 text-blue-500" />,
     },
     {
       title: "Location",
       value: "Addis Ababa, 4Kilo, Ethiopia",
-      icon: "📍",
-      gradient: "from-purple-500 to-pink-600"
+      icon: <MapPin className="w-6 h-6 text-blue-500" />,
     },
     {
       title: "LinkedIn",
       value: "https://www.linkedin.com/in/nebiyu-tefera-aau/",
-      icon: "💼",
-      gradient: "from-blue-600 to-indigo-600"
+      icon: <Linkedin className="w-6 h-6 text-blue-500" />,
     }
   ];
 
   const socialLinks = [
-    { name: "GitHub", url: "https://github.com/Nebagit", icon: "💻" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/nebiyu-tefera-aau/", icon: "💼" },
-    { name: "Substack", url: "https://nebiyutefera.substack.com", icon: "📝" },
-    { name: "LeetCode", url: "https://leetcode.com/u/Nebiyu-T/", icon: "💻" }
+    { name: "GitHub", url: "https://github.com/Nebagit", icon: <Github className="w-6 h-6 mx-auto text-blue-500" /> },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/nebiyu-tefera-aau/", icon: <Linkedin className="w-6 h-6 mx-auto text-blue-500" /> },
+    { name: "Substack", url: "https://nebiyutefera.substack.com", icon: <Notebook className="w-6 h-6 mx-auto text-blue-500" /> },
+    { name: "LeetCode", url: "https://leetcode.com/u/Nebiyu-T/", icon: <Laptop className="w-6 h-6 mx-auto text-blue-500" /> }
   ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* --- Header --- */}
       <div className="text-center mb-16">
         <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
           Contact Me
@@ -105,6 +95,7 @@ const Contact = () => {
         </p>
       </div>
 
+      {/* --- Main Grid --- */}
       <div className="grid lg:grid-cols-2 gap-12 min-w-0">
         {/* Contact Form */}
         <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-white/10">
@@ -195,20 +186,19 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* Contact Information */}
+        {/* Contact Info + Socials */}
         <div className="space-y-8">
+          {/* Contact Info */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">Get In Touch</h3>
             <div className="grid gap-4">
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
+                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-blue-500/40 hover:bg-white/10 transition-all duration-300 group"
                 >
                   <div className="flex items-center min-w-0">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-r ${info.gradient} rounded-lg flex items-center justify-center text-xl mr-4 group-hover:scale-110 transition-transform duration-300`}
-                    >
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-xl mr-4 group-hover:scale-110 transition-transform duration-300">
                       {info.icon}
                     </div>
                     <div className="min-w-0">
@@ -231,9 +221,9 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 text-center group"
+                  className="bg-white/5 backdrop-blur-lg rounded-xl p-4 border border-blue-500/40 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 text-center group"
                 >
-                  <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                     {social.icon}
                   </div>
                   <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
@@ -244,7 +234,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Availability Status */}
+          {/* Availability */}
           <div className="bg-gradient-to-r from-green-500/20 to-emerald-600/20 backdrop-blur-lg rounded-xl p-6 border border-green-500/20">
             <div className="flex items-center">
               <div className="w-4 h-4 bg-green-500 rounded-full animate-pulse mr-3"></div>
@@ -256,13 +246,9 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Popup */}
-        {popup && (
-          <PopupCard type={popup.type} message={popup.message} onClose={() => setPopup(null)} />
-        )}
+        {popup && <PopupCard type={popup.type} message={popup.message} onClose={() => setPopup(null)} />}
       </div>
     </div>
-
   );
 };
 

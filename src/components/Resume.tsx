@@ -1,3 +1,12 @@
+import { 
+  GraduationCap, 
+  Briefcase, 
+  Sparkles, 
+  Building2, 
+  ExternalLink, 
+  AlignLeft, 
+  Dot 
+} from "lucide-react";
 
 const Resume = () => {
   const experiences = [
@@ -5,7 +14,7 @@ const Resume = () => {
       title: "ERP Developer",
       company: "Addis Software",
       companyUrl: "https://addissoftware.com/",
-      period: "Mar, 2025, - Present",
+      period: "Mar, 2025 - Present",
       description: "Develop and customize ERP solutions for various industries.",
       achievements: [
         "Develop and support ERP modules to improve business operations, focusing on finance, HR, procurement, and CRM.",
@@ -17,12 +26,12 @@ const Resume = () => {
       title: "Project Manager and Translator",
       company: "Gemstone App",
       companyUrl: "https://gemstonesapp.com/",
-      period: "Mar, 2025, - Present",
+      period: "Mar, 2025 - Present",
       description: "Managing and overseeing the development of an African languages learning application.",
       achievements: [
-        " Translated and proofread the Amharic language content during the application development.",
-        " Contributed to the successful implementation of the project, which was recognized among the top 3 winning projects in a U.S. competition",
-        " Led a team of 13 members from Europe and Africa who worked as translators and proofreaders for the development of an African languages learning app."
+        "Translated and proofread the Amharic language content during the application development.",
+        "Contributed to the successful implementation of the project, which was recognized among the top 3 winning projects in a U.S. competition.",
+        "Led a team of 13 members from Europe and Africa who worked as translators and proofreaders for the development of an African languages learning app."
       ]
     },
     {
@@ -30,11 +39,11 @@ const Resume = () => {
       company: "GUBA Technology",
       companyUrl: "https://gubatech.com/",
       period: "Aug, 2024 - Mar, 2025",
-      description: "Developed and maintaining web and mobile applications, contributing to both backend and frontend projects",
+      description: "Developing and maintaining web and mobile applications, contributing to both backend and frontend projects.",
       achievements: [
-        "Build secure and scalable backend services using Node.js, Express.js, MySQL, Postgres, and Firebase.",
-        "Develop responsive web and mobile interfaces with React.js, HTML/CSS, JavaScript, and Flutter.",
-        "Customize ERPNext modules using the Frappe framework and collaborate in Agile teams to deliver tailored solutions."
+        "Built secure and scalable backend services using Node.js, Express.js, MySQL, Postgres, and Firebase.",
+        "Developed responsive web and mobile interfaces with React.js, HTML/CSS, JavaScript, and Flutter.",
+        "Customized ERPNext modules using the Frappe framework and collaborated in Agile teams to deliver tailored solutions."
       ]
     },
     {
@@ -54,11 +63,11 @@ const Resume = () => {
       company: "Koderlab Training Center",
       companyUrl: "https://koderlab.net/",
       period: "Oct 2023 - Jul 2024",
-      description: "Leading frontend training sessions for multiple student batches, combining technical instruction with hands-on mentorship to prepare students for real-world development.",
+      description: "Leading frontend training sessions for multiple student batches, combining technical instruction with hands-on mentorship.",
       achievements: [
-        "Train and mentor students in frontend technologies and programming fundamentals.",
-        "Design and deliver industry-relevant curriculum covering both basic and advanced topics.",
-        "Collaborate with staff to maintain an engaging and effective learning environment."
+        "Trained and mentored students in frontend technologies and programming fundamentals.",
+        "Designed and delivered industry-relevant curriculum covering both basic and advanced topics.",
+        "Collaborated with staff to maintain an engaging and effective learning environment."
       ]
     }
   ];
@@ -69,24 +78,24 @@ const Resume = () => {
       institution: "Addis Ababa University",
       companyUrl: "https://www.aau.edu.et/",
       period: "2020 - 2024",
-      description: "Pursuing a Bachelor of Science in Computer Science at Addis Ababa University, gaining a strong foundation in software development, algorithms, and systems design.",
-      focus: "Studying core computer science subjects—including data structures, databases, operating systems, and web development—while applying knowledge through hands-on projects and research."
+      description: "Studied core computer science subjects including data structures, databases, and web development.",
+      focus: "Applied theoretical knowledge through projects and research at Addis Ababa University."
     },
     {
       degree: "ERP Specialist Training and Project Management",
       institution: "HansaWorld University",
       companyUrl: "https://www.hansaworld.com/en/university",
-      period: "Mar 2025- Oct 2025",
-      description: "ERP Specialist Training and Project Management",
-      focus: "Completed an intensive, project-based bootcamp covering ERP systems, project management methodologies, and business process optimization."
+      period: "Mar 2025 - Oct 2025",
+      description: "Comprehensive training in ERP systems and project management methodologies.",
+      focus: "Focused on practical business process optimization and ERP implementation."
     },
     {
       degree: "Full Stack Web Development",
       institution: "Evangadi Inc",
       companyUrl: "https://www.aau.edu.et/",
       period: "Feb 2023 - Feb 2024",
-      description: "Full Stack Web Development Bootcamp – Evangadi Networks",
-      focus: "Completed an intensive, project-based bootcamp covering HTML, CSS, JavaScript, React, Node.js, Express, and databases, with hands-on training and daily coding practice."
+      description: "Intensive bootcamp in full stack web development using React and Node.js.",
+      focus: "Hands-on coding and project-based learning for real-world application."
     }
   ];
 
@@ -96,24 +105,24 @@ const Resume = () => {
       institution: "Addis Ababa University",
       companyUrl: "https://www.aau.edu.et/",
       period: "2022 - 2024",
-      description: "As a Student Representative of the Computer Science department, I've perfected the art of communication with esteemed instructors, from Drs. to Professors and also all students, navigating the academic landscape with finesse and charm. 🎓💬",
-      focus: "Amazingly 😁, I've also mastered the intricate dance of phone rings, messages, meetings, and all the jazz – a marathon of responsibilities, laughter, and the occasional dash across the library to silence a ringing phone (sorry, librarians!)."
+      description: "Served as the official liaison between students and faculty members.",
+      focus: "Organized academic and social events to strengthen student engagement."
     },
-     {
+    {
       activity: "Huawei ICT Academy Ambassador at AAU",
       institution: "Huawei ICT Academy and Addis Ababa University",
       companyUrl: "https://e.huawei.com/en/talent/ict-academy/#/home",
       period: "Apr 2023 - Jul 2024",
-      description: "As an Ambassador of the Huawei ICT Academy at AAU CNCS in the Science Campus, I represent the academy within the campus community. The Huawei ICT Academy has a contract with Addis Ababa University to support students in the digital world.",
-      focus: " It offers short courses with certificates for both paid and free scholarship opportunities, aimed at developing technological skills among AAU students. Our role as ambassadors is to facilitate the academy's presence and promote its initiatives within our respective campuses."
+      description: "Represented Huawei ICT Academy and promoted digital education initiatives.",
+      focus: "Facilitated academy activities and assisted in skill development programs."
     },
     {
       activity: "President of Volunteers Club",
       institution: "Addis Ababa University",
       companyUrl: "https://www.aau.edu.et/",
       period: "Feb 2023 - Jul 2024",
-      description: "Awarded Effective Leadership of the Year for impactful student-led initiatives and community-centered coordination.",
-      focus: "During my time at Addis Ababa University, I served as a resident leader of the Volunteers and Development Club, where I led numerous initiatives aimed at empowering students and enhancing campus life. My leadership was recognized with a Certificate of Effective Leadership of the Year, awarded for organizing impactful programs including bi-weekly campus-wide clean-up campaigns, student-led service rotations to provide campus workers with scheduled rest periods, and collaborative events with alumni through a dedicated communication panel. I also coordinated academic and social development activities that enabled students to actively contribute to their university environment and grow through shared community engagement."
+      description: "Led impactful community initiatives and student volunteer programs.",
+      focus: "During my time at Addis Ababa University, I served as a resident leader of the Volunteers and Development Club, where I led numerous initiatives aimed at empowering students and enhancing campus life. My leadership was recognized with a Certificate of Effective Leadership of the Year, awarded for organizing impactful programs including bi-weekly campus-wide clean-up campaigns, student-led service rotations to provide campus workers with scheduled rest periods, and collaborative events with alumni through a dedicated communication panel. I also coordinated academic and social development activities that enabled students to actively contribute to their university environment and grow through shared community engagement"
     }
   ];
 
@@ -130,29 +139,35 @@ const Resume = () => {
         {/* Experience Section */}
         <div>
           <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
-            <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-3"></span>
+            <Briefcase className="w-8 h-8 text-blue-500 mr-3" />
             Experience
           </h3>
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
-              >
+              <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                  <h4 className="text-xl font-bold text-white">{exp.title}</h4>
+                  <h4 className="text-xl font-bold text-white flex items-center">
+                    <Briefcase className="w-5 h-5 text-blue-400 mr-2" />
+                    {exp.title}
+                  </h4>
                   <span className="text-blue-400 font-semibold">{exp.period}</span>
                 </div>
-                <h5 className="text-lg text-purple-400 mb-3">{exp.company}</h5>
-                <a href={exp.companyUrl} className="text-green-300 mb-4" target="_blank" rel="noopener noreferrer">
-                  Link
+                <h5 className="text-lg text-purple-400 mb-3 flex items-center">
+                  <Building2 className="w-5 h-5 text-purple-400 mr-2" />
+                  {exp.company}
+                </h5>
+                <a href={exp.companyUrl} className="text-green-300 mb-4 flex items-center" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4 mr-2" /> Link
                 </a>
-                <p className="text-gray-300 mb-4">{exp.description}</p>
+                <p className="text-gray-300 mb-4 flex items-start">
+                  <AlignLeft className="w-4 h-4 text-blue-300 mr-2 mt-1" />
+                  {exp.description}
+                </p>
                 <ul className="space-y-2">
                   {exp.achievements.map((achievement, i) => (
                     <li key={i} className="text-gray-400 flex items-start">
-                      <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <Dot className="w-5 h-5 text-purple-400 mr-2 flex-shrink-0" />
                       {achievement}
                     </li>
                   ))}
@@ -162,75 +177,79 @@ const Resume = () => {
           </div>
         </div>
 
-        {/* Education Section */}
+        {/* Education & Extracurriculars */}
         <div>
           <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
-            <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-3"></span>
+            <GraduationCap className="w-8 h-8 text-purple-500 mr-3" />
             Education
           </h3>
 
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div
-                key={index}
-                className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
-              >
+              <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                  <h4 className="text-xl font-bold text-white">{edu.degree}</h4>
+                  <h4 className="text-xl font-bold text-white flex items-center">
+                    <GraduationCap className="w-5 h-5 text-purple-400 mr-2" />
+                    {edu.degree}
+                  </h4>
                   <span className="text-purple-400 font-semibold">{edu.period}</span>
                 </div>
-                <h5 className="text-lg text-blue-400 mb-3">{edu.institution}</h5>
-                <a href={edu.companyUrl} className="text-green-300 mb-4" target="_blank" rel="noopener noreferrer">
-                  Link
+                <h5 className="text-lg text-blue-400 mb-3 flex items-center">
+                  <Building2 className="w-5 h-5 text-blue-400 mr-2" />
+                  {edu.institution}
+                </h5>
+                <a href={edu.companyUrl} className="text-green-300 mb-4 flex items-center" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-4 h-4 mr-2" /> Link
                 </a>
-                <p className="text-gray-300 mb-3">{edu.description}</p>
+                <p className="text-gray-300 mb-3 flex items-start">
+                  <AlignLeft className="w-4 h-4 text-purple-300 mr-2 mt-1" />
+                  {edu.description}
+                </p>
                 <p className="text-gray-400 italic">{edu.focus}</p>
               </div>
             ))}
           </div>
 
-
-          {/* Extracurricular Section */}
           <div className="mt-16">
             <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
-              <span className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mr-3"></span>
+              <Sparkles className="w-8 h-8 text-pink-500 mr-3" />
               Extra Curricular Activities
             </h3>
 
             <div className="space-y-8">
               {extracurriculars.map((extra, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
-                >
+                <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                    <h4 className="text-xl font-bold text-white">{extra.activity}</h4>
+                    <h4 className="text-xl font-bold text-white flex items-center">
+                      <Sparkles className="w-5 h-5 text-pink-400 mr-2" />
+                      {extra.activity}
+                    </h4>
                     <span className="text-purple-400 font-semibold">{extra.period}</span>
                   </div>
-                  <h5 className="text-lg text-blue-400 mb-3">{extra.institution}</h5>
-                  <a href={extra.companyUrl} className="text-green-300 mb-4" target="_blank" rel="noopener noreferrer">
-                    Link
+                  <h5 className="text-lg text-blue-400 mb-3 flex items-center">
+                    <Building2 className="w-5 h-5 text-blue-400 mr-2" />
+                    {extra.institution}
+                  </h5>
+                  <a href={extra.companyUrl} className="text-green-300 mb-4 flex items-center" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" /> Link
                   </a>
-                  <p className="text-gray-300 mb-3">{extra.description}</p>
+                  <p className="text-gray-300 mb-3 flex items-start">
+                    <AlignLeft className="w-4 h-4 text-pink-300 mr-2 mt-1" />
+                    {extra.description}
+                  </p>
                   <p className="text-gray-400 italic">{extra.focus}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* View On LinkedIn Button */}
           <div className="mt-8">
-            <a
-              href="https://www.linkedin.com/in/nebiyu-tefera-aau/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/nebiyu-tefera-aau/" target="_blank" rel="noopener noreferrer">
               <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 View On LinkedIn
               </button>
             </a>
           </div>
-
         </div>
       </div>
     </div>
