@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Tilye from '../assets/images/ProfTileye4.jpg';
 import Ashenafi from '../assets/images/MrAshenafi1.jpg';
 import Beimnet from '../assets/images/MrsBeimnet.jpeg';
@@ -8,7 +8,7 @@ import Hermela from '../assets/images/Hermella.jpg';
 
 const Recommendations = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false); // ✅ Added pause state
+  // const [isPaused, setIsPaused] = useState(false);
 
   const recommendations = [
     {
@@ -59,14 +59,14 @@ const Recommendations = () => {
   ];
 
   useEffect(() => {
-    if (isPaused) return; // ✅ Stop auto-slide when paused
+    // if (isPaused) return;
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % recommendations.length);
     }, 6000);
 
     return () => clearInterval(interval);
-  }, [recommendations.length, isPaused]);
+  }, [recommendations.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % recommendations.length);
@@ -80,7 +80,7 @@ const Recommendations = () => {
     setCurrentSlide(index);
   };
 
-  const togglePause = () => setIsPaused((prev) => !prev); // ✅ Toggle play/pause
+  // const togglePause = () => setIsPaused((prev) => !prev);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,14 +106,36 @@ const Recommendations = () => {
                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-white/10 mx-4">
                   <div className="grid md:grid-cols-3 gap-8 items-center">
                     {/* Recommender Info */}
-                    <div className="text-center md:text-left">
-                      <div className="relative mb-6">
-                        <img
-                          src={rec.image}
-                          alt={rec.name}
-                          className="w-32 h-32 rounded-full mx-auto md:mx-0 object-cover border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-2xl"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full animate-pulse"></div>
+                    <div className="text-center md:text-left relative">
+                      <div className="relative mb-6 flex items-center md:justify-start">
+                        {/* Circular Image */}
+                        <div className="relative z-10">
+                          <img
+                            src={rec.image}
+                            alt={rec.name}
+                            className="w-32 h-32 rounded-full object-cover border-4 border-gradient-to-r from-blue-500 to-purple-600 shadow-2xl"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full animate-pulse"></div>
+                        </div>
+
+                        {/* Cylindrical Horizontal Shadow Bar */}
+                        <div
+                          className="ml-[-2px] h-32 flex-1 relative rounded-full"
+                          style={{
+                            background: 'linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3))',
+                            boxShadow: '-100px 0 0 rgba(59, 130, 246, 0.2), 0 0 20px rgba(139, 92, 246, 0.2)',
+                          }}
+                        >
+                          {/* Fan-like highlights */}
+                          <div className="absolute top-1/2 left-0 w-full h-0.5 flex justify-between opacity-20 -translate-y-1/2">
+                            {[...Array(5)].map((_, i) => (
+                              <div
+                                key={i}
+                                className="w-1 h-4 bg-white/30 rounded-sm transform rotate-12"
+                              />
+                            ))}
+                          </div>
+                        </div>
                       </div>
 
                       <h3 className="text-2xl font-bold text-white mb-2">{rec.name}</h3>
@@ -151,39 +173,17 @@ const Recommendations = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-blue-400 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
         >
           <ChevronLeft size={24} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-blue-400 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
         >
           <ChevronRight size={24} />
         </button>
 
-        {/* ✅ Pause/Play Button */}
-        <button
-          onClick={togglePause}
-          className="absolute right-1/2 bottom-[-3rem] transform translate-x-1/2 z-10 p-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
-        >
-          {isPaused ? <Play size={20} /> : <Pause size={20} />}
-        </button>
-
-        {/* Slide Indicators */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {recommendations.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 scale-125'
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Additional Testimonials Preview */}

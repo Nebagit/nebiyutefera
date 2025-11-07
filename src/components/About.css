@@ -1,15 +1,15 @@
 .animated-luminous::before {
   content: '';
   position: absolute;
-  inset: -60%;
+  inset: -200%;
   background: conic-gradient(
     from 0deg,
-    rgba(0, 255, 255, 0.8),
-    rgba(0, 128, 255, 0.9),
-    rgba(0, 0, 128, 0.6),
-    rgba(255, 255, 255, 0.5),
-    rgba(0, 255, 255, 0.9),
-    rgba(0, 128, 255, 0.7)
+    rgba(0, 255, 0, 0.8),      /* Bright Green */
+    rgba(255, 255, 0, 0.9),    /* Vibrant Yellow */
+    rgba(0, 128, 255, 0.9),    /* Sky Blue */
+    rgba(0, 255, 255, 0.1),    /* Cyan Touch */
+    rgba(0, 255, 0, 0.9),      /* Green again for continuity */
+    rgba(0, 128, 255, 0.7)     /* Blue fade end */
   );
   filter: blur(60px) saturate(2.5) brightness(2);
   mix-blend-mode: screen;
@@ -25,9 +25,10 @@
   inset: -55%;
   background: radial-gradient(
     circle,
-    rgba(0, 255, 255, 0.3) 0%,
-    rgba(0, 100, 255, 0.15) 35%,
-    transparent 70%
+    rgba(0, 255, 0, 0.3) 0%,        /* Soft green center glow */
+    rgba(255, 255, 0, 0.2) 35%,     /* Yellow mid glow */
+    rgba(0, 128, 255, 0.15) 55%,    /* Blue edge fade */
+    transparent 75%
   );
   filter: blur(80px);
   border-radius: 50%;
@@ -75,5 +76,23 @@
   100% {
     transform: rotate(-360deg) scale(1);
     opacity: 0.8;
+  }
+}
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(1.01);
+  }
+  50% {
+    transform: translateY(3px) scale(0.99);
+  }
+  75% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
   }
 }

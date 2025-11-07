@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Netflix from '../assets/images/Netflix.png';
 import Amazon from '../assets/images/amazon.jpg';
 import Evangadi from '../assets/images/Evangadi-forum.png';
@@ -6,9 +6,12 @@ import Employee from '../assets/images/Employee.png';
 import Expense from '../assets/images/Expense-tracker.png';
 import Landing from '../assets/images/nextjs.png';
 
-
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  // ✅ Typed ref fix: tell TS what kind of elements the array will hold
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const projects = [
     {
@@ -78,6 +81,41 @@ const Portfolio = () => {
     ? projects
     : projects.filter(project => project.category === activeFilter);
 
+  // Ensure projectRefs.current length matches filteredProjects length
+  useEffect(() => {
+    projectRefs.current = projectRefs.current.slice(0, filteredProjects.length);
+  }, [filteredProjects]);
+
+  // Scroll detection for mobile: find the card closest to vertical center and mark it active
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth > 768) return; // only apply on mobile sizes
+      let closestIndex: number | null = null;
+      let closestOffset = Infinity;
+
+      projectRefs.current.forEach((el, idx) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const offset = Math.abs(rect.top + rect.height / 2 - window.innerHeight / 2);
+        if (offset < closestOffset) {
+          closestOffset = offset;
+          closestIndex = idx;
+        }
+      });
+
+      setActiveCard(closestIndex);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [filteredProjects]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
@@ -111,12 +149,12 @@ const Portfolio = () => {
         {filteredProjects.map((project, index) => (
           <div
             key={index}
+            ref={(el) => { projectRefs.current[index] = el; }}
             className="group bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl"
             style={{
               animationDelay: `${index * 100}ms`
             }}
           >
-            {/* Project Image */}
             <div className="relative overflow-hidden">
               <img
                 src={project.image}
@@ -125,18 +163,20 @@ const Portfolio = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              {/* Project Links Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300
+                ${activeCard === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                 <div className="flex space-x-4">
                   <a
                     href={project.demoUrl}
-                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                    className={`px-4 py-2 bg-blue-500 text-white rounded-lg transition-colors duration-300
+                      ${activeCard === index ? 'bg-blue-600' : 'hover:bg-blue-600'}`}
                   >
                     Demo
                   </a>
                   <a
                     href={project.codeUrl}
-                    className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors duration-300"
+                    className={`px-4 py-2 bg-purple-500 text-white rounded-lg transition-colors duration-300
+                      ${activeCard === index ? 'bg-purple-600' : 'hover:bg-purple-600'}`}
                   >
                     Code
                   </a>
@@ -144,7 +184,6 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Project Content */}
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-blue-400 group-hover:to-purple-600 transition-all duration-300">
                 {project.title}
@@ -154,7 +193,6 @@ const Portfolio = () => {
                 {project.description}
               </p>
 
-              {/* Technologies */}
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, techIndex) => (
                   <span
@@ -170,7 +208,6 @@ const Portfolio = () => {
         ))}
       </div>
 
-      {/* GitHub Profile Link */}
       <div className="text-center mt-16">
         <div className="bg-gradient-to-r from-blue-500/20 to-purple-600/20 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
           <h3 className="text-3xl font-bold text-white mb-4">Explore More Projects</h3>
